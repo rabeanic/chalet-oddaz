@@ -1,0 +1,30 @@
+[
+  {
+    "from": "2026-07-04",
+    "to": "2026-07-11",
+    "status": "available",
+    "note_en": "Example week — edit in data/availability.json",
+    "note_fr": "Semaine exemple — à modifier dans data/availability.json"
+  },
+  {
+    "from": "2026-07-11",
+    "to": "2026-07-18",
+    "status": "pending",
+    "note_en": "Option pending",
+    "note_fr": "Option en cours"
+  },
+  {
+    "from": "2026-12-26",
+    "to": "2027-01-02",
+    "status": "reserved",
+    "note_en": "Reserved",
+    "note_fr": "Réservé"
+  },
+  {
+    "from": "2027-02-14",
+    "to": "2027-02-21",
+    "status": "available",
+    "note_en": "School holiday week",
+    "note_fr": "Semaine de vacances scolaires"
+  }
+]
