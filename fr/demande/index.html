@@ -24,7 +24,61 @@
   </nav>
 </header>
 
-<main><section class="section"><p class="kicker">Demande de séjour</p><h2>Parlez-nous de votre séjour souhaité.</h2><p class="lead">Les demandes sont traitées personnellement. Merci d’indiquer vos dates, le nombre de personnes et un court message.</p><div class="notice"><strong>Emplacement formulaire Tally :</strong> remplacez ce bloc par le code d’intégration Tally, ou ajoutez un lien direct vers votre formulaire.</div><div class="actions"><a class="button dark" href="https://tally.so/" target="_blank" rel="noopener">Ouvrir le formulaire</a></div></section></main>
+<main>
+  <section class="section">
+    <p class="kicker">Demande de séjour</p>
+    <h2>Parlez-nous de votre séjour souhaité.</h2>
+    <p class="lead">Les demandes sont traitées personnellement. Merci d’indiquer vos dates, le nombre de personnes et un court message.</p>
+    <div class="actions">
+      <button type="button" class="button dark" data-open-enquiry>Ouvrir le formulaire</button>
+    </div>
+  </section>
+</main>
+
+<dialog class="enquiry-dialog" data-enquiry-dialog>
+  <div class="enquiry-dialog-inner">
+    <button type="button" class="enquiry-close" data-close-enquiry aria-label="Fermer le formulaire">&times;</button>
+    <h3>Formulaire de demande</h3>
+    <p class="muted">Les champs marqués d’un * sont obligatoires.</p>
+    <form class="enquiry-form" data-enquiry-form data-contact-email="enquiries@chaletoddaz.com">
+      <div class="form-field">
+        <label for="enquiry-name">Nom *</label>
+        <input id="enquiry-name" name="name" type="text" autocomplete="name" required />
+      </div>
+      <div class="form-field">
+        <label for="enquiry-email">E-mail *</label>
+        <input id="enquiry-email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div class="form-field">
+        <label for="enquiry-phone">Téléphone</label>
+        <input id="enquiry-phone" name="phone" type="tel" autocomplete="tel" />
+      </div>
+      <div class="form-grid two">
+        <div class="form-field">
+          <label for="enquiry-arrival">Date d’arrivée *</label>
+          <input id="enquiry-arrival" name="arrival" type="date" required />
+        </div>
+        <div class="form-field">
+          <label for="enquiry-departure">Date de départ *</label>
+          <input id="enquiry-departure" name="departure" type="date" required />
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="enquiry-guests">Nombre de personnes *</label>
+        <input id="enquiry-guests" name="guests" type="number" min="1" max="14" required />
+      </div>
+      <div class="form-field">
+        <label for="enquiry-message">Message *</label>
+        <textarea id="enquiry-message" name="message" rows="5" required></textarea>
+      </div>
+      <p class="form-feedback" data-enquiry-feedback hidden></p>
+      <div class="actions">
+        <button type="submit" class="button dark">Envoyer la demande</button>
+        <button type="button" class="button light" data-close-enquiry>Annuler</button>
+      </div>
+    </form>
+  </div>
+</dialog>
 <footer class="footer">
   <div class="footer-inner">
     <div><strong>Chalet Oddaz</strong><br>Samoëns, Haute-Savoie, France</div>
