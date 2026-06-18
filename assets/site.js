@@ -24,4 +24,34 @@ async function renderAvailability() {
     tableBody.innerHTML = `<tr><td colspan="4">${labels[lang].error}</td></tr>`;
   }
 }
+async function renderGallery() {
+  const container = document.querySelector('[data-gallery]');
+  if (!container) return;
+  const lang = document.documentElement.lang || 'en';
+  try {
+    const response = await fetch('/data/gallery.json');
+    const sections = await response.json();
+    container.innerHTML = sections.map(section => {
+      const title = lang === 'fr' ? section.title_fr : section.title_en;
+      const alt = lang === 'fr'
+        ? `Chalet Oddaz — ${section.title_fr}`
+        : `Chalet Oddaz — ${section.title_en}`;
+      const photos = section.photos.map(photo => `
+        <figure class="gallery-photo">
+          <img src="/assets/photos/${photo}" alt="${alt}" loading="lazy" />
+        </figure>
+      `).join('');
+      return `
+        <section class="section tight gallery-section" id="${section.id}">
+          <p class="kicker">${title}</p>
+          <div class="gallery-grid">${photos}</div>
+        </section>
+      `;
+    }).join('');
+  } catch (error) {
+    container.innerHTML = `<section class="section"><p class="muted">${lang === 'fr' ? 'La galerie sera publiée prochainement.' : 'Gallery photos will be published soon.'}</p></section>`;
+  }
+}
+
 renderAvailability();
+renderGallery();
