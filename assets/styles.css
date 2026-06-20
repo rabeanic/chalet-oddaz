@@ -293,7 +293,7 @@ h2 {
   background: url('/assets/interior-placeholder.svg') center/cover no-repeat;
   box-shadow: var(--shadow);
 }
-.image-panel.second { background-image: url('/assets/photos/mairie-paysage-samoens.jpg'); }
+.image-panel.second { background-image: url('/assets/photos/IMG_6983.jpeg'); }
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
