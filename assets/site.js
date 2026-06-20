@@ -171,14 +171,14 @@ function initEnquiryForm() {
   const lang = document.documentElement.lang || 'en';
   const copy = {
     en: {
-      success: 'Your enquiry is ready to send in your email app. We will reply personally.',
+      success: 'Your enquiry is ready to send. We look forward to welcoming you.',
       error: 'Please complete all required fields before sending.',
-      subject: 'Chalet Oddaz rental enquiry'
+      subject: 'Chalet Oddaz — stay enquiry'
     },
     fr: {
-      success: 'Votre demande est prête à être envoyée depuis votre application e-mail. Nous vous répondrons personnellement.',
+      success: 'Votre demande est prête à être envoyée. Nous avons hâte de vous accueillir.',
       error: 'Merci de remplir tous les champs obligatoires avant l’envoi.',
-      subject: 'Demande de séjour Chalet Oddaz'
+      subject: 'Chalet Oddaz — demande de séjour'
     }
   };
   const labels = copy[lang] || copy.en;

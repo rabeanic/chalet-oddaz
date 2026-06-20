@@ -1,8 +1,8 @@
 [
   {
     "id": "interior",
-    "title_en": "Interior",
-    "title_fr": "Intérieur",
+    "title_en": "Refined interiors",
+    "title_fr": "Intérieurs raffinés",
     "photos": [
       "IMG_7644.jpeg",
       "IMG_5668.jpeg",
@@ -28,8 +28,8 @@
   },
   {
     "id": "exterior",
-    "title_en": "Exterior",
-    "title_fr": "Extérieur",
+    "title_en": "The setting",
+    "title_fr": "Le cadre",
     "photos": [
       "IMG_6012.jpeg",
       "IMG_6946.jpeg",
