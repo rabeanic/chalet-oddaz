@@ -74,12 +74,12 @@ img { max-width: 100%; display: block; }
   min-height: 78vh;
   position: relative;
   display: grid;
-  place-items: end start;
-  padding: 90px 22px;
+  place-items: end center;
+  padding: 48px 22px 56px;
   color: var(--white);
   overflow: hidden;
   background:
-    linear-gradient(to top, rgba(15,26,24,.72) 0%, rgba(15,26,24,.22) 42%, transparent 72%),
+    linear-gradient(to top, rgba(15,26,24,.62) 0%, rgba(15,26,24,.16) 38%, transparent 68%),
     url('/assets/photos/IMG_6792.jpeg') center/cover no-repeat;
 }
 .hero::after {
@@ -92,9 +92,23 @@ img { max-width: 100%; display: block; }
 .hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 920px;
+  max-width: 720px;
   margin: 0 auto;
   width: min(1180px, 100%);
+  text-align: center;
+}
+.hero-brand {
+  margin: 0 0 12px;
+  font-size: clamp(26px, 4vw, 40px);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.hero-stars {
+  margin: 0 0 18px;
+  letter-spacing: .35em;
+  color: var(--gold);
+  font-size: 16px;
 }
 .eyebrow {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -111,11 +125,19 @@ h1 {
   letter-spacing: -.04em;
   max-width: 920px;
 }
+.hero h1 {
+  font-size: clamp(20px, 2.8vw, 28px);
+  line-height: 1.3;
+  letter-spacing: -.015em;
+  max-width: 620px;
+  margin: 0 auto;
+  font-weight: 400;
+}
 .hero-copy {
-  max-width: 760px;
-  font-size: clamp(18px, 2.3vw, 25px);
-  color: rgba(255,255,255,.90);
-  margin: 26px 0 0;
+  max-width: 560px;
+  font-size: clamp(15px, 1.6vw, 17px);
+  color: rgba(255,255,255,.82);
+  margin: 14px auto 0;
 }
 .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
 .button {
@@ -181,14 +203,15 @@ h2 {
 }
 .muted { color: var(--muted); }
 .glance-section {
-  margin-top: -42px;
   position: relative;
   z-index: 2;
+}
+.glance-section.section {
+  padding-top: 48px;
 }
 .glance-inner {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 0 22px;
 }
 .glance-grid {
   display: grid;
@@ -207,6 +230,20 @@ h2 {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 15px;
   font-weight: 600;
+}
+.glance-item-wide {
+  align-items: flex-start;
+  grid-column: span 2;
+}
+.glance-item-wide strong {
+  display: block;
+  margin-bottom: 4px;
+}
+.glance-item-wide .muted {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.45;
 }
 .glance-icon {
   font-size: 22px;
@@ -242,6 +279,26 @@ h2 {
   box-shadow: var(--shadow);
 }
 .image-panel.second { background-image: url('/assets/photos/mairie-paysage-samoens.jpg'); }
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.photo-grid img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+.chalet-section h2 {
+  font-size: clamp(24px, 3.5vw, 36px);
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
 .split {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
@@ -512,6 +569,7 @@ h2 {
   .nav { align-items: flex-start; flex-direction: column; }
   .nav-links { justify-content: flex-start; }
   .grid.two, .grid.three, .grid.four, .split, .stats, .glance-grid, .form-grid.two { grid-template-columns: 1fr; }
+  .glance-item-wide { grid-column: span 1; }
   .gallery-grid { grid-template-columns: 1fr; }
   .hero { min-height: 70vh; }
 }
